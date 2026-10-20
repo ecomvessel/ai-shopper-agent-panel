@@ -1303,7 +1303,7 @@ const latestRun = (dir) => { const d = path.join(tmp, dir); const x = fs.existsS
   fs.copyFileSync(path.join(root, 'examples/personas/northwick-gift-giver-gwen.json'), path.join(proj, 'personas', 'northwick-gift-giver-gwen.json'));
   fs.writeFileSync(path.join(proj, 'shopper-panel.config.json'), JSON.stringify({ block_rules: [{ kind: 'host', hosts: ['https://cdn.example-apps.com/'] }] }));
   const v = await new Promise((resolve) => { const c = spawn(process.execPath, [path.join(root, 'scripts/validate-personas.mjs'), path.join(proj, 'personas')], { cwd: tmp }); let o = ''; c.stdout.on('data', (d) => { o += d; }); c.stderr.on('data', (d) => { o += d; }); c.on('exit', (code) => resolve({ code, o })); });
-  ok(v.code === 1 && /Note: no shopper-panel\.config\.json in this folder; using [^\n]*r10-project\/shopper-panel\.config\.json/.test(v.o) && /rule 1 \(\(no name\)\)/.test(v.o) && !/undefined/.test(v.o) && /Fix: remove https:\/\//.test(v.o), 'validator: run from elsewhere, it reads the config next to the persona folder, says so, and shows (no name)', v.o.slice(0, 600));
+  ok(v.code === 1 && /Note: no shopper-panel\.config\.json in this folder; using [^\n]*r10-project[\\/]shopper-panel\.config\.json/.test(v.o) && /rule 1 \(\(no name\)\)/.test(v.o) && !/undefined/.test(v.o) && /Fix: remove https:\/\//.test(v.o), 'validator: run from elsewhere, it reads the config next to the persona folder, says so, and shows (no name)', v.o.slice(0, 600));
 }
 
 // Round 12, 1: a locale is checked with Intl (isRealLocaleSegment), never by shape, on every allow decision
@@ -1403,7 +1403,7 @@ const latestRun = (dir) => { const d = path.join(tmp, dir); const x = fs.existsS
   fs.writeFileSync(path.join(proj, 'shopper-panel.config.json'), JSON.stringify({ block_rules: [{ name: 'r12-bad', kind: 'host', hosts: ['https://cdn.example-apps.com/'] }] }));
   const rr = await runPanel(['--cart', '--url', O, '--i-own', '127.0.0.1', '--personas', path.join(proj, 'personas'), '--include-drafts', '--dry-run']);
   const note = (rr.out.match(/Note: [^\n]*/) || [''])[0];
-  ok(rr.code === 2 && /Note: no shopper-panel\.config\.json in this folder; using [^\n]*r12-project\/shopper-panel\.config\.json, next to the persona folder\./.test(rr.out) && /r12-bad/.test(rr.err + rr.out), 'runner: run from elsewhere, it reads the config next to the persona folder, says so, and applies it', `${rr.code} ${(rr.out + rr.err).slice(0, 400)}`);
+  ok(rr.code === 2 && /Note: no shopper-panel\.config\.json in this folder; using [^\n]*r12-project[\\/]shopper-panel\.config\.json, next to the persona folder\./.test(rr.out) && /r12-bad/.test(rr.err + rr.out), 'runner: run from elsewhere, it reads the config next to the persona folder, says so, and applies it', `${rr.code} ${(rr.out + rr.err).slice(0, 400)}`);
   const v = await new Promise((resolve) => { const c = spawn(process.execPath, [path.join(root, 'scripts/validate-personas.mjs'), path.join(proj, 'personas')], { cwd: tmp }); let o = ''; c.stdout.on('data', (d) => { o += d; }); c.on('exit', (code) => resolve({ code, o })); });
   ok(v.o.includes(note) && note.length > 0, 'runner and validator print the same Note', `${note} | ${v.o.slice(0, 300)}`);
   ok(/1 problem\(s\) in 2 file\(s\) \(1 personas \+ config\)\./.test(v.o), 'validator: the count says "(N personas + config)" when the config is counted', v.o.split('\n').slice(-3).join(' '));
@@ -1414,7 +1414,7 @@ const latestRun = (dir) => { const d = path.join(tmp, dir); const x = fs.existsS
   let fo = ''; fx.stdout.on('data', (d) => { fo += d; });
   for (let i = 0; i < 100 && !/Leave this running/.test(fo); i++) await sleep(100);
   fx.kill();
-  ok(fo.includes(JSON.stringify(path.join(root, 'scripts', 'shopper-panel.mjs'))) && !/~\/\.claude/.test(fo), 'the practice store prints the real path of the running script', fo.slice(0, 400));
+  ok(fo.includes(`"${path.join(root, 'scripts', 'shopper-panel.mjs')}"`) && !/~\/\.claude/.test(fo), 'the practice store prints the real path of the running script', fo.slice(0, 400));
   const rd = (f) => fs.readFileSync(path.join(root, f), 'utf8');
   ok(rd('docs/block-rules.md').includes('in your project folder, next to personas/') && !/in that folder\)/.test(rd('docs/block-rules.md')), 'block-rules.md: the config is "in your project folder, next to personas/"');
   ok(/^- `--config <file>`/m.test(rd('README.md')), 'README lists --config');
