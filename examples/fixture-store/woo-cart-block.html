@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Warenkorb - Northwick Candle Co.</title>
+<link rel="stylesheet" href="/assets/store.css">
+</head><body class="page wp-site-blocks woocommerce-cart woocommerce-page">
+<header class="header site-header"><a href="/"><img src="/img/logo.svg" width="40" height="40" alt="Northwick"></a>
+  <a class="cart-contents" href="/warenkorb/">Warenkorb</a></header>
+<main>
+  <h1>Warenkorb</h1>
+  <!-- WooCommerce Cart block: the server sends an empty shell; the rows come from the Store API in the browser -->
+  <div class="wp-block-woocommerce-cart" data-block-name="woocommerce/cart">
+    <table class="wc-block-cart-items"><tbody id="rows"><tr><td>Lade...</td></tr></tbody></table>
+    <div class="wc-block-cart__submit-container"><a href="/kasse/" class="wc-block-cart__submit-button wc-block-components-button">Zur Kasse</a></div>
+  </div>
+</main>
+<script>
+fetch('/wp-json/wc/store/v1/cart', { headers: { Accept: 'application/json' } }).then(function (r) { return r.json(); }).then(function (c) {
+  document.getElementById('rows').innerHTML = c.items.length ? c.items.map(function (i) { return '<tr class="wc-block-cart-items__row"><td>' + i.name + '</td><td>' + i.quantity + '</td></tr>'; }).join('') : '<tr><td>Dein Warenkorb ist leer</td></tr>';
+}).catch(function () {});
+</script>
+</body></html>

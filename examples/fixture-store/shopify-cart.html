@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Your cart | Northwick Candle Co.</title>
+<link rel="stylesheet" href="/assets/store.css">
+<script>window.Shopify = { shop: 'northwick-candles.example', theme: { name: 'Dawn', id: 1, role: 'main' } };</script>
+</head><body>
+<header class="header"><a href="/"><img src="/img/logo.svg" width="40" height="40" alt="Northwick"></a><a class="header__icon" href="/cart">Cart</a></header>
+<main>
+  <h1>Your cart</h1>
+  {{BANNER}}
+  {{BAR}}
+  <form action="/cart" method="post">
+    <table>{{ROWS}}</table>
+    <p class="totals">Subtotal {{SUBTOTAL}}</p>
+    {{DISCOUNTLINE}}
+    <p class="totals">Total {{TOTAL}}</p>
+    <p>Taxes and shipping calculated at checkout.</p>
+    {{CHECKOUT}}
+  </form>
+  {{WIDGETS}}
+</main>
+{{EXTRA}}
+</body></html>

@@ -1,0 +1,214 @@
+{
+  "_note": "Built-in rules, read by scripts/shopper-panel.mjs. Third-party requests use an ALLOW-list: the store's own host(s) always pass, the hosts in allow_hosts pass, and everything else is blocked inside the test browser. The named rules below stop known tracker and analytics requests. \"endpoint\" and \"endpoint_hosts\" are honoured on these built-in rules only: their stops are never counted as a request the test may have broken. No named rule ever stops the store's own cart and store API paths (/cart, /cart.js, /cart/add, /cart/change, /cart/update, /cart/clear, /api/<version>/graphql.json, /wp-json/wc/store/...), a page or frame, or the images, style sheets and fonts of the store's own host or an allowed host. Server-side tracking cannot be blocked from the browser. How to write your own rules, with worked examples: docs/block-rules.md.",
+  "allow_hosts": [
+    "cdn.shopify.com",
+    "*.shopifycdn.com"
+  ],
+  "rules": [
+    {
+      "name": "meta-pixel",
+      "kind": "host",
+      "hosts": [
+        "facebook.net",
+        "graph.facebook.com",
+        "facebook.com/tr"
+      ]
+    },
+    {
+      "name": "email-sms-marketing",
+      "kind": "host",
+      "hosts": [
+        "klaviyo.com",
+        "mailchimp.com",
+        "chimpstatic.com",
+        "omnisend.com",
+        "sendinblue.com",
+        "brevo.com",
+        "attn.tv",
+        "attentivemobile.com",
+        "postscript.io"
+      ]
+    },
+    {
+      "name": "session-replay",
+      "kind": "host",
+      "hosts": [
+        "clarity.ms",
+        "hotjar.com",
+        "hotjar.io",
+        "fullstory.com",
+        "mouseflow.com",
+        "luckyorange.com",
+        "luckyorange.net",
+        "heapanalytics.com",
+        "heap.io",
+        "logrocket.com",
+        "logrocket.io"
+      ]
+    },
+    {
+      "name": "google-analytics-ads",
+      "kind": "host",
+      "hosts": [
+        "google-analytics.com",
+        "analytics.google.com",
+        "googletagmanager.com",
+        "doubleclick.net",
+        "googleadservices.com",
+        "google.com/pagead",
+        "google.com/ccm",
+        "google.com/ads",
+        "googlesyndication.com"
+      ]
+    },
+    {
+      "name": "platform-analytics",
+      "kind": "host",
+      "hosts": [
+        "monorail-edge.shopifysvc.com",
+        "otlp-http-production.shopifysvc.com",
+        "stats.wp.com",
+        "pixel.wp.com"
+      ],
+      "endpoint": true
+    },
+    {
+      "name": "platform-analytics",
+      "kind": "path",
+      "own_host": true,
+      "path": "^(/[a-z]{2,3}(-[a-z0-9]{2,4})?)?/\\.well-known/shopify/monorail(/|\\?|$)|^(/[a-z]{2,3}(-[a-z0-9]{2,4})?)?/api/collect(\\?|$)|^(/[a-z]{2,3}(-[a-z0-9]{2,4})?)?/cdn/shopifycloud/(perf-kit|trekkie|web-pixels-manager)/|^(/[a-z]{2,3}(-[a-z0-9]{2,4})?)?/cdn/s/trekkie\\.[^/?]*\\.js(\\?|$)|^(/[a-z]{2,3}(-[a-z0-9]{2,4})?)?/wpm@|^(/[a-z]{2,3}(-[a-z0-9]{2,4})?)?/cdn/wpm@|^(/[a-z]{2,3}(-[a-z0-9]{2,4})?)?/cdn/wpm/|^(/[a-z]{2,3}(-[a-z0-9]{2,4})?)?/web-pixels-manager|^(/[a-z]{2,3}(-[a-z0-9]{2,4})?)?/cdn/web-pixels-manager|^(/[a-z]{2,3}(-[a-z0-9]{2,4})?)?/web-pixels@|^(/[a-z]{2,3}(-[a-z0-9]{2,4})?)?/web-pixel@|^(/[a-z]{2,3}(-[a-z0-9]{2,4})?)?/cdn/web-pixels@|^(/[a-z]{2,3}(-[a-z0-9]{2,4})?)?/cdn/web-pixel@|^/wp-json/wc-analytics(/|\\?|$)|^/wp-content/plugins/jetpack/[^?]*stats[^/?]*\\.js(\\?|$)",
+      "endpoint": true
+    },
+    {
+      "name": "platform-analytics",
+      "kind": "path",
+      "own_host": true,
+      "path": "\\?(.*&)?wc-ajax=wc_analytics(&|$)|\\?(.*&)?rest_route=/wc-analytics(/|&|$)",
+      "endpoint": true
+    },
+    {
+      "name": "platform-analytics",
+      "kind": "path",
+      "own_host": false,
+      "path": "(^|/)trekkie\\.[^/?]*\\.js(\\?|$)|(^|/)wpm@[^/?]*(/|\\?|$)|(^|/)web-pixels?(-manager)?(@[^/?]*)?(/|\\?|$)|(^|/)perf-kit(/|\\?|$)|(^|/)shopify-perf-kit[-.@][^/?]*\\.js(\\?|$)|(^|/)api/collect(/|\\?|$)",
+      "endpoint_hosts": [
+        "cdn.shopify.com"
+      ]
+    },
+    {
+      "name": "first-party-google-tag",
+      "kind": "path",
+      "own_host": true,
+      "path": "(^|/)g/collect\\?(.*&)?v=2(&|$)|(^|/)gtag/js\\?(.*&)?id=(G|AW|GT|DC)-|(^|/)gtm\\.js\\?(.*&)?id=GTM-",
+      "endpoint": true
+    },
+    {
+      "name": "product-analytics",
+      "kind": "host",
+      "hosts": [
+        "segment.io",
+        "segment.com",
+        "mixpanel.com",
+        "amplitude.com",
+        "posthog.com",
+        "plausible.io/api/event"
+      ]
+    },
+    {
+      "name": "tiktok-pixel",
+      "kind": "host",
+      "hosts": [
+        "analytics.tiktok.com",
+        "tiktok.com/pixel",
+        "tiktok.com/i18n/pixel",
+        "tiktokw.us"
+      ]
+    },
+    {
+      "name": "pinterest-pixel",
+      "kind": "host",
+      "hosts": [
+        "ct.pinterest.com",
+        "s.pinimg.com/ct"
+      ]
+    },
+    {
+      "name": "other-ad-pixels",
+      "kind": "host",
+      "hosts": [
+        "bat.bing.com",
+        "tr.snapchat.com",
+        "sc-static.net",
+        "alb.reddit.com",
+        "redditstatic.com/ads",
+        "analytics.twitter.com",
+        "static.ads-twitter.com",
+        "criteo.com",
+        "criteo.net",
+        "adroll.com",
+        "px.ads.linkedin.com",
+        "snap.licdn.com",
+        "ct.capterra.com"
+      ]
+    },
+    {
+      "name": "attribution",
+      "kind": "host",
+      "hosts": [
+        "triplewhale.",
+        "triplewhale-pixel.",
+        "northbeam.io",
+        "elevar.",
+        "getelevar.",
+        "littledata."
+      ]
+    },
+    {
+      "name": "attribution",
+      "kind": "path",
+      "own_host": false,
+      "path": "(^|/)triple-?pixel[^/?]*\\.js(\\?|$)",
+      "endpoint_hosts": [
+        "cdn.shopify.com"
+      ]
+    },
+    {
+      "name": "helpdesk-chat-events",
+      "kind": "host",
+      "hosts": [
+        "gorgias.chat",
+        "gorgias.io"
+      ],
+      "path": "(^|/)(events?|track(ing)?)(/|\\?|$)",
+      "endpoint": true
+    },
+    {
+      "name": "helpdesk-chat-events",
+      "kind": "host",
+      "hosts": [
+        "tidio.co"
+      ],
+      "path": "(^|/)track(ing)?(/|\\?|$)",
+      "endpoint": true
+    },
+    {
+      "name": "review-app-events",
+      "kind": "host",
+      "hosts": [
+        "judge.me/api/analytics",
+        "judge.me/events"
+      ],
+      "endpoint": true
+    },
+    {
+      "name": "review-app-events",
+      "kind": "host",
+      "hosts": [
+        "api.yotpo.com",
+        "okendo.io"
+      ],
+      "path": "(^|/)(pixel|events?|track)(/|\\?|$)",
+      "endpoint": true
+    }
+  ]
+}

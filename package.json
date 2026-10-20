@@ -1,0 +1,30 @@
+{
+  "name": "ai-shopper-agent-panel",
+  "version": "1.0.0",
+  "description": "AI shopper personas built from your store data walk your online store on a phone and report where each one quits.",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "test": "node scripts/test-offline.mjs",
+    "demo": "node scripts/demo.mjs",
+    "validate": "node scripts/validate-personas.mjs",
+    "check": "node --check scripts/shopper-panel.mjs && node --check scripts/panel-lib.mjs && node --check scripts/persona-schema.mjs && node --check scripts/validate-personas.mjs && node --check scripts/fixture-server.mjs && node --check scripts/demo.mjs && node --check scripts/test-offline.mjs",
+    "fixture": "node scripts/fixture-server.mjs",
+    "panel": "node scripts/shopper-panel.mjs"
+  },
+  "dependencies": {
+    "playwright": "1.63.0"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "playwright",
+    "ecommerce",
+    "qa",
+    "shopify",
+    "personas",
+    "claude-code",
+    "skill"
+  ]
+}

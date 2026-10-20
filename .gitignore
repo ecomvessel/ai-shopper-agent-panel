@@ -1,0 +1,5 @@
+node_modules/
+reports/
+# your own personas hold store data: keep them out of git
+personas/*.json
+!personas/.gitkeep

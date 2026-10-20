@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Canvas Candle Tote | Northwick Candle Co.</title>
+<link rel="stylesheet" href="/assets/store.css">
+<style>
+  /* the shape of Dawn's product section: at 750px and wider the info column is a tall position:sticky box */
+  .product { display: block; }
+  /* Dawn's media is responsive: the photo never makes the page wider than the phone */
+  .product__media-wrapper img { max-width: 100%; height: auto; display: block; }
+  @media screen and (min-width: 750px) {
+    .product { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .product__column-sticky { display: block; position: sticky; top: 3rem; z-index: 2; }
+  }
+  .product__description { min-height: 420px; }
+  .tote-atc-bar { position: sticky; bottom: 0; height: 56px; background: #f4f4f4; border-top: 1px solid #ddd; }
+  .tote-member-bar { position: fixed; top: 0; right: 0; width: 160px; height: 40px; background: #fff; }
+</style>
+<script>var Shopify = Shopify || {};
+Shopify.shop = "northwick-candles.myshopify.com"; Shopify.theme = {"name":"Dawn","id":1,"role":"main"};</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Canvas Candle Tote","offers":{"@type":"Offer","price":"42.00","priceCurrency":"USD"}}</script>
+</head><body>
+<header class="header"><a href="/"><img src="/img/logo.svg" width="40" height="40" alt="Northwick"></a><a class="header__icon" href="/cart">Cart</a></header>
+<main id="MainContent">
+  <section class="product product--medium grid grid--1-col grid--2-col-tablet">
+    <div class="grid__item product__media-wrapper"><img src="/img/linen-1.svg" width="600" height="600" alt="Canvas Candle Tote"></div>
+    <div class="product__info-wrapper grid__item">
+      <div id="ProductInfo-main" class="product__info-container product__column-sticky">
+        <h1>Canvas Candle Tote</h1>
+        <div class="no-js-hidden" id="price-main" role="status">
+          <div class="price price--large"><div class="price__container"><div class="price__regular">
+            <span class="visually-hidden visually-hidden--inline">Regular price</span>
+            <span class="price-item price-item--regular">$42.00 USD</span>
+          </div></div></div>
+        </div>
+        <div class="product__description rte"><p>Heavy canvas, fits four candles. Ships in 2 business days.</p></div>
+        <form action="/cart/add" method="post" class="form"><input type="hidden" name="id" value="501"><button type="submit" name="add" class="product-form__submit button">Add to cart</button></form>
+        <div class="tote-atc-bar">Tote bundle <span class="price-item">$99.00</span></div>
+      </div>
+    </div>
+  </section>
+  <div class="tote-member-bar">Members <span class="price-item">$35.00</span></div>
+</main>
+{{EXTRA}}
+</body></html>

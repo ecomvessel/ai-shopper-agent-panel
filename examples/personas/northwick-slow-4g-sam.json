@@ -1,0 +1,78 @@
+{
+  "id": "northwick-slow-4g-sam",
+  "status": "draft",
+  "evidence": "data",
+  "name": "Slow-Signal Sam",
+  "who": "29, found Northwick by googling 'soy candle that does not smell fake' while commuting by train. Has bought candles before and returned two that gave her a headache. Patchy signal the whole ride.",
+  "voice_line": "If the page does not load by the next tunnel, I am gone. And I need to know it is real soy and not perfume.",
+  "shopping_for": "One candle for herself, scented lightly with natural ingredients, under $30.",
+  "entry_point": {
+    "channel": "google search",
+    "landing_path": "/products/linen-and-cedar-candle"
+  },
+  "device": "pixel-7",
+  "network": {
+    "name": "train commute, slow 4G",
+    "latency_ms": 250,
+    "down_kbps": 1600,
+    "up_kbps": 750
+  },
+  "patience": {
+    "load_seconds": 12,
+    "max_screens_to_price": 3,
+    "max_taps_to_checkout": 18
+  },
+  "popups": "leave",
+  "photos_to_view": 2,
+  "product_pick": null,
+  "before_buying": [
+    {
+      "need": "what the wax and fragrance are made of",
+      "look_for": [
+        "paraffin.?free",
+        "soy wax",
+        "coconut wax",
+        "beeswax",
+        "essential oils?",
+        "phthalate.?free",
+        "ingredients"
+      ],
+      "if_missing": "quit"
+    },
+    {
+      "need": "how long it burns",
+      "look_for": [
+        "burn time",
+        "burns? for",
+        "\\d+ hours"
+      ],
+      "if_missing": "warn"
+    },
+    {
+      "need": "reviews from people with headaches or sensitivities",
+      "look_for": [
+        "out of 5",
+        "average rating",
+        "\\d+ reviews"
+      ],
+      "if_missing": "warn",
+      "look_in": "both"
+    }
+  ],
+  "quits_when": "The page is slow on her connection, or a pop-up covers the page, or she cannot see what the candle is made of.",
+  "main_quit_reason": "page too slow on weak signal",
+  "success_goal": "Sees real ingredients and burn time, then adds one candle to the cart before her stop.",
+  "choices": [
+    {
+      "option": "size",
+      "pick": "8 oz"
+    }
+  ],
+  "based_on": [
+    "EXAMPLE DATA (fictional store): analytics export says Android phones convert at 0.9% vs iPhone 2.1%",
+    "EXAMPLE DATA: Clarity-style report, 18% of phone sessions leave in the first 5 seconds; median Android load 7.4s",
+    "EXAMPLE DATA: top organic landing page is /products/linen-and-cedar-candle (22% of Google traffic)",
+    "EXAMPLE DATA: review quote 'finally a candle that does not give me a headache'",
+    "EXAMPLE DATA: 9 support emails ask 'is this paraffin free'"
+  ]
+}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Autumn Ember Candle | Northwick Candle Co.</title>
+<link rel="stylesheet" href="/assets/store.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Autumn Ember Candle","offers":{"@type":"Offer","price":"32.00","priceCurrency":"USD","availability":"https://schema.org/InStock"}}</script>
+<script>window.Shopify = { shop: 'northwick-candles.example', theme: { name: 'Dawn', id: 1, role: 'main' } };</script>
+  <script async src="{{THIRD}}/pixel.js"></script>
+</head><body>
+<div class="announcement-bar">New autumn scents are here</div>
+<header class="header"><a href="/"><img src="/img/logo.svg" width="40" height="40" alt="Northwick"></a>
+  <a class="header__icon" id="cart-icon-bubble" href="/cart">Cart</a></header>
+<main>
+  <div class="product">
+    <media-gallery class="product__media-gallery">
+      <div class="product__media-list" id="gallery">
+        <img src="/img/ember-1.svg" width="600" height="600" alt="Autumn Ember Candle">
+        <img src="/img/ember-2.svg" width="600" height="600" alt="Autumn Ember Candle, lit">
+      </div>
+    </media-gallery>
+    <product-info class="product__info-container">
+      <h1>Autumn Ember Candle</h1>
+      <div class="price"><span class="price-item price-item--regular">$32.00</span></div>
+      <p>Seasonal, limited run. Notes of clove, smoked orange and a little vanilla. If you like Vanilla Hearth, this is its warmer cousin.</p>
+      <form action="/cart/add" method="post" id="product-form">
+        <input type="hidden" name="id" value="401">
+        <div class="product-form__input"><label for="qty">Quantity</label><input type="text" id="qty" name="quantity" value="1"></div>
+        <button type="submit" name="add">Add to cart</button>
+      </form>
+    </product-info>
+  </div>
+</main>
+<footer>Northwick Candle Co. is a made-up store for testing. Free shipping on orders over $60.</footer>
+<div id="cart-notification"><p>Added to your cart.</p><a id="cart-notification-button" class="button" href="/cart">View cart</a></div>
+<script src="/assets/shopify-theme.js"></script>
+{{EXTRA}}
+</body></html>

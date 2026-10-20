@@ -1,0 +1,35 @@
+/* Northwick Candle Co. is a made-up store used only by the offline test and the demo. */
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.45 -apple-system,system-ui,sans-serif;color:#2b2b2b;background:#fffdf9}
+a{color:#5b3b1f}
+.announcement-bar{background:#2b2b2b;color:#fff;text-align:center;font-size:13px;padding:6px 12px}
+.header{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid #eee}
+.header nav{font-size:14px;display:none}
+main{padding:0 16px 40px}
+h1{font-size:26px;margin:14px 0 6px}
+.product__media-list{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:8px}
+.product__media-list img,.woocommerce-product-gallery img{width:100%;height:auto;flex:0 0 100%;scroll-snap-align:start;display:block}
+.thumbnail-list,.flex-control-thumbs{display:flex;gap:6px;margin:8px 0;padding:0;list-style:none}
+.thumbnail-list button{border:1px solid #ccc;background:#fff;padding:0;width:56px;height:56px}
+.thumbnail-list img,.flex-control-thumbs img{width:54px;height:54px;display:block}
+.price{font-size:22px;font-weight:600;margin:8px 0}
+.price del{color:#888;font-weight:400;font-size:16px;margin-right:6px}
+.product-form__input,.variations td,.variations th{display:block;margin:10px 0}
+label,legend{font-weight:600;font-size:14px}
+select,input[type=text]{width:100%;padding:10px;font-size:16px}
+fieldset{border:0;padding:0;margin:10px 0}
+.button,button[name=add],button[name=checkout],.single_add_to_cart_button,.checkout-button{display:block;width:100%;padding:14px;background:#2b2b2b;color:#fff;border:0;font-size:16px;text-align:center;text-decoration:none;margin:12px 0}
+details{border-top:1px solid #ddd;padding:10px 0}
+.long-copy p{margin:0 0 12px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0;list-style:none}
+.card img{width:100%;height:auto;display:block}
+.card .price{font-size:15px}
+.quick-add button{width:100%;padding:8px;font-size:13px}
+.sticky-atc{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid #ddd;padding:8px 16px;font-size:14px}
+.newsletter-popup{position:fixed;inset:0;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;z-index:50}
+.newsletter-popup .box{background:#fff;padding:24px;width:85%;position:relative}
+.newsletter-popup .close{position:absolute;top:6px;right:8px;border:0;background:none;font-size:24px}
+#cart-notification{display:none;position:fixed;top:0;left:0;right:0;background:#fff;border-bottom:1px solid #ccc;padding:12px 16px;z-index:40}
+.woocommerce-message{background:#eef6ee;padding:10px;margin:10px 0}
+table{width:100%;border-collapse:collapse}
+footer{padding:24px 16px;background:#f2efe8;font-size:13px}

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kasse - Northwick Candle Co.</title>
+</head><body class="page woocommerce-checkout woocommerce-page">
+<main>
+  <h1>Kasse</h1>
+  <!-- A checkout on a non-English slug. The test proves the panel never lets this page load. -->
+  <div data-block-name="woocommerce/checkout" class="wp-block-woocommerce-checkout">
+    <form name="checkout" method="post" class="checkout woocommerce-checkout" action="/kasse/">
+      <p><label>E-Mail <input type="email" name="billing_email"></label></p>
+      <button type="submit" name="woocommerce_checkout_place_order">Zahlungspflichtig bestellen</button>
+    </form>
+  </div>
+</main>
+</body></html>

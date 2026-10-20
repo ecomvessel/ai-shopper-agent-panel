@@ -1,0 +1,79 @@
+{
+  "id": "northwick-repeat-refill-rae",
+  "status": "draft",
+  "evidence": "inferred",
+  "name": "Repeat Refill Rae",
+  "who": "44, has bought Northwick candles three times and gets the email when a new scent drops. Shops on the couch in the evening on Wi-Fi. Wants her favourite plus one new thing, and free shipping if she crosses a threshold.",
+  "voice_line": "I already know I like these. Just show me the new scent, let me add my usual, and tell me what it costs to ship.",
+  "shopping_for": "Her usual scent again plus the newest seasonal scent; she is trying to hit the free shipping amount without buying filler.",
+  "entry_point": {
+    "channel": "email",
+    "landing_path": "/collections/new-arrivals"
+  },
+  "device": "iphone-14",
+  "network": {
+    "name": "home Wi-Fi",
+    "latency_ms": 0,
+    "down_kbps": null,
+    "up_kbps": null
+  },
+  "patience": {
+    "load_seconds": 10,
+    "max_screens_to_price": 4,
+    "max_taps_to_checkout": 22
+  },
+  "popups": "close-always",
+  "photos_to_view": 2,
+  "product_pick": "new|seasonal|autumn",
+  "before_buying": [
+    {
+      "need": "the free shipping threshold or shipping cost",
+      "look_for": [
+        "free shipping",
+        "shipping (is|cost|from|over)",
+        "\\$\\d+ shipping",
+        "orders over"
+      ],
+      "if_missing": "quit"
+    },
+    {
+      "need": "what the new scent smells like compared to the ones she knows",
+      "look_for": [
+        "smells like",
+        "notes of",
+        "if you (love|like)",
+        "similar to"
+      ],
+      "if_missing": "warn"
+    },
+    {
+      "need": "a way to add more than one candle easily",
+      "look_for": [
+        "bundle",
+        "set of",
+        "save \\d+",
+        "buy \\d+",
+        "quantity"
+      ],
+      "if_missing": "warn"
+    }
+  ],
+  "quits_when": "She cannot work out what shipping will cost until the last step, so she cannot tell whether adding a second candle is worth it.",
+  "main_quit_reason": "shipping cost unclear until late",
+  "success_goal": "Two candles in the cart and a clear total with shipping, from the email, in a few taps.",
+  "choices": [
+    {
+      "option": "scent|fragrance",
+      "pick": null
+    },
+    {
+      "option": "size",
+      "pick": "8|medium|standard"
+    }
+  ],
+  "based_on": [
+    "INFERRED, EXAMPLE ONLY (fictional store): no repeat-buyer data provided; built from the store's Shopify-style repeat rate note of 'about a quarter of customers reorder'",
+    "INFERRED: store FAQ says free shipping over $60 but the product page does not show it",
+    "INFERRED: email campaigns link to /collections/new-arrivals"
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "id": "northwick-gift-giver-gwen",
+  "status": "draft",
+  "evidence": "data",
+  "name": "Gift Giver Gwen",
+  "who": "36, buying a housewarming or thank-you gift for a friend or a coworker, usually the week before she needs it. Not a candle person herself and afraid of picking a scent the other person will hate.",
+  "voice_line": "I have no idea what she likes. Is there a safe one, and will it get here by Saturday? Tell me and I'll buy it.",
+  "shopping_for": "A nice-looking gift candle between $25 and $40 that is safe to give to someone whose taste she does not know, and that arrives in time.",
+  "entry_point": {
+    "channel": "instagram",
+    "landing_path": "/collections/gifts"
+  },
+  "device": "iphone-14",
+  "network": {
+    "name": "phone data, decent 4G",
+    "latency_ms": 70,
+    "down_kbps": 9000,
+    "up_kbps": 3000
+  },
+  "patience": {
+    "load_seconds": 6,
+    "max_screens_to_price": 2,
+    "max_taps_to_checkout": 14
+  },
+  "popups": "close-once",
+  "photos_to_view": 3,
+  "product_pick": "gift box|gift set",
+  "before_buying": [
+    {
+      "need": "a safe, crowd-pleasing scent (what it smells like in plain words)",
+      "look_for": [
+        "crowd.?pleas",
+        "everyone loves",
+        "smells like",
+        "notes of",
+        "light (and|&) fresh",
+        "best.?seller"
+      ],
+      "if_missing": "warn"
+    },
+    {
+      "need": "a delivery date or number of days",
+      "look_for": [
+        "arrives?",
+        "deliver(y|ed|s)?",
+        "ships? (in|within|by)",
+        "business days",
+        "order by"
+      ],
+      "if_missing": "quit"
+    },
+    {
+      "need": "gift packaging or a gift note",
+      "look_for": [
+        "gift (box|wrap|note|message|ready)",
+        "ribbon",
+        "comes (boxed|in a box)"
+      ],
+      "if_missing": "warn"
+    },
+    {
+      "need": "easy returns or exchange",
+      "look_for": [
+        "returns?",
+        "exchanges?",
+        "refunds?",
+        "guarantee"
+      ],
+      "if_missing": "warn"
+    }
+  ],
+  "quits_when": "She cannot find out when it will arrive, or the page makes her read paragraphs about wax before she gets to a price.",
+  "main_quit_reason": "no delivery date",
+  "success_goal": "A gift candle in the cart that she feels sure about, with a delivery date she has seen.",
+  "choices": [
+    {
+      "option": "box colou?r|colou?r",
+      "pick": "sage|cream"
+    },
+    {
+      "option": "scent|fragrance",
+      "pick": "linen|vanilla|amber|cotton"
+    }
+  ],
+  "based_on": [
+    "EXAMPLE DATA (fictional store): analytics export says 58% of Northwick sessions are on iPhone, 31% Android, 11% desktop",
+    "EXAMPLE DATA: Instagram story ad 'Gift in a Jar' sends 41% of paid traffic to /collections/gifts",
+    "EXAMPLE DATA: exit survey, 23 of 60 answers to 'what stopped you buying today' were 'could not tell when it would arrive'",
+    "EXAMPLE DATA: review quote 'bought for my sister-in-law, she cried, box was beautiful'",
+    "EXAMPLE DATA: support emails, 14 of 52 in November asked 'will this arrive before [date]'"
+  ]
+}

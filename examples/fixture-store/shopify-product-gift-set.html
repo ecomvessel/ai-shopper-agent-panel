@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gift Set of Three | Northwick Candle Co.</title>
+<link rel="stylesheet" href="/assets/store.css">
+<script>window.Shopify = { shop: 'northwick-candles.example', theme: { name: 'Dawn', id: 1, role: 'main' } };</script>
+  <script async src="{{THIRD}}/pixel.js"></script>
+</head><body>
+<div class="announcement-bar">Gift sets from $19.00 this week</div>
+<header class="header"><a href="/"><img src="/img/logo.svg" width="40" height="40" alt="Northwick"></a>
+  <a class="header__icon" id="cart-icon-bubble" href="/cart">Cart</a></header>
+<main>
+  <div class="product">
+    <media-gallery class="product__media-gallery">
+      <div class="product__media-list" id="gallery">
+        <img src="/img/gift-1.svg" width="600" height="600" alt="Gift Set of Three">
+        <img src="/img/gift-2.svg" width="600" height="600" alt="Gift box">
+      </div>
+    </media-gallery>
+    <product-info class="product__info-container">
+      <h1>Gift Set of Three</h1>
+      <div class="price"><span class="price-item price-item--regular">$38.00</span></div>
+      <p>Three 4 oz candles in our best-selling scents. A safe pick when you do not know their taste: light and fresh, nothing too strong.</p>
+      <p>Comes boxed with a gift note card.</p>
+      <form action="/cart/add" method="post" id="product-form">
+        <input type="hidden" name="id" value="201">
+        <fieldset class="product-form__input"><legend>Box colour</legend>
+          <label><input type="radio" name="options[Box colour]" value="Cream" checked> Cream</label>
+          <label><input type="radio" name="options[Box colour]" value="Sage"> Sage</label>
+        </fieldset>
+        <button type="submit" name="add">Add to cart</button>
+      </form>
+      <details><summary>Delivery</summary><div>Order by 2pm for dispatch the same day. Arrives in 3 to 5 business days.</div></details>
+      <details><summary>Returns</summary><div>Easy returns and exchanges within 30 days.</div></details>
+    </product-info>
+  </div>
+</main>
+<footer>Northwick Candle Co. is a made-up store for testing.</footer>
+<div id="cart-notification"><p>Added to your cart.</p><a id="cart-notification-button" class="button" href="/cart">View cart</a></div>
+<script src="/assets/shopify-theme.js"></script>
+{{EXTRA}}
+</body></html>

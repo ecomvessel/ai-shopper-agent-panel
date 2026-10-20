@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Linen and Cedar Candle | Northwick Candle Co.</title>
+<link rel="stylesheet" href="/assets/store.css">
+<script>window.Shopify = { shop: 'northwick-candles.example', theme: { name: 'Dawn', id: 1, role: 'main' } };</script>
+<script src="{{THIRD}}/pixel.js"></script>
+</head><body>
+<div class="announcement-bar">Gift sets from $19.00 this week</div>
+<header class="header"><a href="/"><img src="/img/logo.svg" width="40" height="40" alt="Northwick"></a>
+  <nav><a href="/collections/gifts">Gifts</a> Free returns on every order</nav>
+  <a class="header__icon" id="cart-icon-bubble" href="/cart">Cart</a></header>
+<main>
+  <div class="product" itemscope itemtype="https://schema.org/Product">
+    <media-gallery class="product__media-gallery">
+      <div class="product__media-list" id="gallery">
+        <img src="/img/linen-1.svg" width="600" height="600" alt="Linen and Cedar Candle">
+        <img src="/img/linen-2.svg" width="600" height="600" alt="Linen and Cedar Candle, lit">
+        <img src="/img/linen-3.svg" width="600" height="600" alt="Linen and Cedar Candle, lid on">
+      </div>
+      <div class="thumbnail-list">
+        <button class="thumbnail" type="button" data-i="0"><img src="/img/linen-1.svg" width="600" height="600" alt=""></button>
+        <button class="thumbnail" type="button" data-i="1"><img src="/img/linen-2.svg" width="600" height="600" alt=""></button>
+        <button class="thumbnail" type="button" data-i="2"><img src="/img/linen-3.svg" width="600" height="600" alt=""></button>
+      </div>
+    </media-gallery>
+    <product-info class="product__info-container">
+      <h1 itemprop="name">Linen and Cedar Candle</h1>
+      <div class="long-copy">
+        <p>Fresh laundry on a line, with a little cedar from the porch. Light enough for a small room.</p>
+        <p>Hand-poured in small batches. Coconut soy wax, cotton wick, phthalate-free fragrance.</p>
+        <p>About 50 hours of burn time in the 8 oz size.</p>
+      </div>
+      <div class="price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+        <meta itemprop="price" content="28.00"><meta itemprop="priceCurrency" content="USD">
+        <span class="price-item price-item--regular">$28.00</span>
+      </div>
+      <form action="/cart/add" method="post" id="product-form">
+        <input type="hidden" name="id" value="101">
+        <div class="product-form__input">
+          <label for="size">Size</label>
+          <select id="size" name="options[Size]">
+            <option value="101">8 oz</option>
+            <option value="102">12 oz</option>
+            <option value="103" disabled>16 oz - Sold out</option>
+          </select>
+        </div>
+        <select hidden name="properties[Wick]"><option>Wooden wick upgrade</option></select>
+        <button type="submit" name="add">Add to cart</button>
+      </form>
+      <details><summary>Shipping and returns</summary><div>Ships in 1 to 2 business days. Free shipping on orders over $60. Returns accepted within 30 days.</div></details>
+      <div id="delivery-estimate"></div>
+    </product-info>
+  </div>
+  <section class="related-products"><h2>You may also like</h2>
+    <a href="/products/vanilla-hearth-candle">Vanilla Hearth Candle</a> <span class="price-item">$24.00</span>
+    <form action="/cart/add" method="post"><input type="hidden" name="id" value="301"><button type="submit">Quick add</button></form>
+  </section>
+  <section class="reviews-section"><h2>What buyers say</h2><div class="reviews-widget" id="reviews">Loading reviews...</div></section>
+</main>
+<div class="sticky-atc">Linen and Cedar <span class="price-item">$26.00 member price</span></div>
+<footer>Northwick Candle Co. is a made-up store for testing. Free returns within 30 days. Contact us any time.</footer>
+<div id="cart-notification"><p>Added to your cart.</p><a id="cart-notification-button" class="button" href="/cart">View cart</a></div>
+<script src="/assets/shopify-theme.js"></script>
+<script src="{{THIRD}}/widgets/delivery-date.js"></script>
+<script>setTimeout(function () { fetch('/api/collect?e=page_view').catch(function () {}); }, 300);</script>
+{{EXTRA}}
+</body></html>

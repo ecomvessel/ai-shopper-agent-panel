@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gifts | Northwick Candle Co.</title>
+<link rel="stylesheet" href="/assets/store.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","itemListElement":[{"@type":"ListItem","position":1,"url":"/products/gift-set"},{"@type":"ListItem","position":2,"url":"/products/linen-and-cedar-candle"},{"@type":"ListItem","position":3,"url":"/products/vanilla-hearth-candle"}]}</script>
+<script>window.Shopify = { shop: 'northwick-candles.example', theme: { name: 'Dawn', id: 1, role: 'main' } };</script>
+  <script async src="{{THIRD}}/pixel.js"></script>
+</head><body>
+<div class="announcement-bar">Gift sets from $19.00 this week</div>
+<header class="header"><a href="/"><img src="/img/logo.svg" width="40" height="40" alt="Northwick"></a>
+  <nav><a href="/collections/gifts">Gifts</a> <a href="/products/gift-set">Gift set</a></nav>
+  <a class="header__icon" id="cart-icon-bubble" href="/cart">Cart</a></header>
+<main>
+  <h1>Gifts</h1>
+  <p>Candles that are easy to give.</p>
+  <ul class="grid product-grid" id="product-grid">
+    <li class="card"><a href="/products/vanilla-hearth-candle"><img src="/img/vanilla-1.svg" width="600" height="600" alt="Vanilla Hearth Candle"><span>Vanilla Hearth Candle</span></a>
+      <div class="price"><span class="price-item">$24.00</span></div>
+      <form class="quick-add" action="/cart/add" method="post"><input type="hidden" name="id" value="301"><button type="submit">Quick add</button></form></li>
+    <li class="card"><a href="/products/linen-and-cedar-candle"><img src="/img/linen-1.svg" width="600" height="600" alt="Linen and Cedar Candle"><span>Linen and Cedar Candle</span></a>
+      <div class="price"><span class="price-item">$28.00</span></div>
+      <form class="quick-add" action="/cart/add" method="post"><input type="hidden" name="id" value="101"><button type="submit">Quick add</button></form></li>
+    <li class="card"><a href="/products/gift-set"><img src="/img/gift-1.svg" width="600" height="600" alt="Gift Set of Three"><span>Gift Set of Three</span></a>
+      <div class="price"><span class="price-item">$38.00</span></div>
+      <form class="quick-add" action="/cart/add" method="post"><input type="hidden" name="id" value="201"><button type="submit">Quick add</button></form></li>
+  </ul>
+</main>
+<footer>Northwick Candle Co. is a made-up store for testing. Free returns within 30 days.</footer>
+<div class="newsletter-popup" id="signup" hidden><div class="box">
+  <button class="close" type="button" aria-label="Close">&times;</button>
+  <p>Get 10% off your first order</p>
+  <form onsubmit="return false"><input type="email" name="email" placeholder="Email"><button type="submit">Accept and sign up</button></form>
+</div></div>
+<script>
+  setTimeout(function () { var p = document.getElementById('signup'); p.hidden = false; p.querySelector('.close').onclick = function () { p.remove(); }; }, 1200);
+</script>
+{{EXTRA}}
+</body></html>

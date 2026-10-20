@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Basket - Northwick Candle Co.</title>
+<link rel="stylesheet" href="/assets/store.css">
+</head><body class="woocommerce-cart woocommerce-page">
+<header class="header site-header"><a href="/"><img src="/img/logo.svg" width="40" height="40" alt="Northwick"></a></header>
+<main>
+  <h1>Basket</h1>
+  {{BANNER}}
+  <form class="woocommerce-cart-form" action="/cart/" method="post"><table class="shop_table cart">{{ROWS}}</table>{{COUPON}}</form>
+  <div class="cart-collaterals">{{BAR}}<table class="shop_table cart_totals"><tr class="cart-subtotal"><th>Subtotal</th><td>{{SUBTOTAL}}</td></tr>{{SHIPPING}}<tr class="order-total"><th>Total</th><td>{{TOTAL}}</td></tr></table>
+    <div class="wc-proceed-to-checkout"><a href="/checkout/" class="checkout-button button alt wc-forward">Proceed to checkout</a></div></div>
+</main>
+{{EXTRA}}
+</body></html>
